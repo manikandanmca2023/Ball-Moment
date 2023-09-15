@@ -1,0 +1,49 @@
+  <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="ball" style="
+background-color:rgb(255, 15, 15);
+top:100px;
+left:100px;
+border-radius:50%;
+position:absolute;
+z-index:5;
+height:100px;
+width:100px;
+">
+</div>
+<script>
+var varx=200;
+var vary=200;
+var ball=document.getElementById("ball");
+var x1=0;
+var x2=1000;
+var y1=0;
+var y2=1000;
+let pos1=0;
+let pos2=0;
+let dir1=1;
+let dir2=1;
+function move(){
+    pos1=pos1+varx*dir1
+    pos2=pos2+vary*dir2
+
+    if(pos1>=x2 || pos2<=x1){
+    dir1*=-1;
+   }
+    if(pos1>=y2 || pos2<=y1)
+   {
+   dir2*=-1;
+   }
+   ball.style.left=pos1+"px"
+   ball.style.top=pos2+"px"
+}
+setInterval(move,1000)
+</script>
+</body>
+</html>
